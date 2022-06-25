@@ -8,7 +8,7 @@ macro_rules! synchronized {
         lazy_static::lazy_static! {
             static ref LOCK: std::sync::Mutex<i32> = std::sync::Mutex::new(0);
         }
-        let _r = LOCK.lock().unwrap();
+        let _guard = LOCK.lock().unwrap();
     };
 }
 
